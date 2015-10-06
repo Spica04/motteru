@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond $1 !(get.php)
+RewriteRule ^(.*)$ /images/uploads/get.php?seq=$1

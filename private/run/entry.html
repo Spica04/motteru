@@ -1,0 +1,115 @@
+﻿<!doctype html>
+
+
+
+<head>
+
+    <title>Motteru - Entry</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="images/favicon.ico">
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+
+<body class="contact">
+
+
+<!-- / Site Header -->
+<div class="site-header">
+
+    
+    <!-- / Site Logo -->
+    <div class="site-logo">
+      <img src="images/site-logo.png" />
+    </div>
+    <!-- \ Site Logo -->
+    
+    
+    <!-- / Site Menu -->
+<?php include(_RUN_DIR . 'parts/menu.php'); ?>
+    <!-- \ Site Menu -->
+    
+    
+    <!-- / Site Description -->
+    <h1>
+    A smart minimal portfolio theme specially made for designers & photographers.
+    </h1>
+    <!-- \ Site Description -->
+    
+    
+    <!-- / Site Footer -->
+    <div class="site-footer">
+        <p>© 2015 Finec</p>
+        <p>Html Theme by <a href="http://themeraid.com">ThemeRaid</a></p>
+    </div>
+    <!-- \ Site Footer -->
+    
+</div>
+<!-- \ Site Header -->
+
+
+<!-- \ Site Main -->
+<div class="site-main">
+    <div class="inner clearfix">
+
+<!-- BEG エラーがあれば表示 -->
+<?php if (count($this->errors) !== 0): ?>
+        <p class="alert bg-danger">
+<?php foreach ($this->errors as $error): ?>
+          <?php $this->ph($error); ?><br>
+<?php endforeach; ?>
+        </p>
+<?php endif; ?>
+<!-- END エラーがあれば表示 -->
+
+        <h2>CONTACT</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+
+<form action="entry.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="token" value="<?php $this->ph($this->options['TOKEN']); ?>" />
+        <input type="hidden" name="command" value="insert" />
+        <input type="hidden" name="seq" value="" />
+        <input type="file" accept="image/*" capture="camera,image" name="img" />
+        <input type="search" placeholder="Category" autocomplete="on" list="options-category" name="lbl" />
+        <input type="date" placeholder="Date" name="dt" />
+        <textarea placeholder="Write item note" name="note"></textarea>
+        <button class="btn btn-default">Send</button>
+</form>
+<datalist id="options-category">
+<?php foreach ($this->options['LIST_LABEL'] as $label): ?>
+  <option value="<?php $this->ph($label); ?>">
+<?php endforeach; ?>
+</datalist>
+
+     </div>
+</div>
+<!-- / Site Main -->
+
+
+<!-- / JS Files  -->
+
+    <!-- jQuery -->
+    <script src="js/jQuery/jquery-2.1.1.js"></script>
+    
+    <!-- Theme Functions -->
+    <script src="js/functions.js"></script>
+        
+<!-- \ JS Files  -->
+
+
+
+</body>
+</html>

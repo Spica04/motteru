@@ -1,0 +1,98 @@
+﻿<!doctype html>
+
+
+
+<head>
+
+	<title>Finec - Responsive Portfolio Theme for Designers & Photographers</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    
+    <!-- Favicon --> 
+	<link rel="shortcut icon" href="images/favicon.ico">
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+
+<body class="blog">
+
+
+<!-- / Site Header -->
+<div class="site-header">
+
+    
+    <!-- / Site Logo -->
+    <div class="site-logo">
+      <img src="images/site-logo.png" />
+    </div>
+    <!-- \ Site Logo -->
+    
+    
+    <!-- / Site Menu -->
+<?php include(_RUN_DIR . 'parts/menu.php'); ?>
+    <!-- \ Site Menu -->
+    
+    
+    <!-- / Site Description -->
+    <h1>
+    A smart minimal portfolio theme specially made for designers & photographers.
+    </h1>
+    <!-- \ Site Description -->
+    
+    
+    <!-- / Site Footer -->
+    <div class="site-footer">
+        <p>© 2015 Finec</p>
+        <p>Html Theme by <a href="http://themeraid.com">ThemeRaid</a></p>
+    </div>
+    <!-- \ Site Footer -->
+    
+</div>
+<!-- \ Site Header -->
+
+
+<!-- \ Site Main -->
+<div class="site-main">
+    <div class="inner clearfix">
+
+<?php foreach ($this->data as $row): ?>
+      <div class="post image-post">
+            <img src="images/uploads/<?php $this->ph($row['seq']); ?>" width="1000" />
+            <span class="date"><?php $this->ph($row['dt']); ?></span>
+            <p><?php $this->ph($row['note']); ?></p>
+      </div>
+<?php endforeach; ?>
+
+     </div>
+</div>
+<!-- / Site Main -->
+
+
+
+<!-- / JS Files  -->
+
+    <!-- jQuery -->
+    <script src="js/jQuery/jquery-2.1.1.js"></script>
+    
+    <!-- Theme Functions -->
+    <script src="js/functions.js"></script>
+    
+    <!-- Bootstrap -->
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+    
+<!-- \ JS Files  -->
+
+
+
+</body>
+</html>

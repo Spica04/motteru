@@ -1,0 +1,103 @@
+﻿<!doctype html>
+
+
+
+<head>
+
+  <title>Motteru - What's New</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.jpg"/>
+    
+    <!-- Favicon --> 
+  <link rel="shortcut icon" href="images/favicon.ico">
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+
+<body class="home">
+
+
+<!-- / Site Header -->
+<div class="site-header">
+
+
+    <!-- / Site Logo -->
+    <div class="site-logo">
+      <a href="">
+        <img src="images/site-logo.png" />
+        </a>
+    </div>
+    <!-- \ Site Logo -->
+
+
+    <!-- / Site Menu -->
+<?php include(_RUN_DIR . 'parts/menu.php'); ?>
+    <!-- \ Site Menu -->
+
+
+    <!-- / Site Description -->
+    <h1>
+    A smart minimal portfolio theme specially made for designers & photographers.
+    </h1>
+    <!-- \ Site Description -->
+
+
+    <!-- / Site Footer -->
+    <div class="site-footer">
+        <p>© 2015 Finec</p>
+        <p>HTML Theme by <a href="http://themeraid.com">ThemeRaid</a></p>
+    </div>
+    <!-- \ Site Footer -->
+    
+</div>
+<!-- \ Site Header -->
+
+
+<!-- \ Site Main -->
+<div class="site-main">
+
+    <ul class="row grid cs-style-2">
+<?php foreach ($this->data as $row): ?>
+      <li class="col-md-2 post">
+        <figure>
+          <a href="./single.php?seq=<?php $this->ph($row['seq']); ?>"><img src="images/uploads/<?php $this->ph($row['seq']); ?>"></a>
+          <figcaption>
+            <h3><?php $this->ph($row['lbl']); ?></h3>
+            <span><?php $this->ph($row['note']); ?></span>
+          </figcaption>
+        </figure>
+      </li>
+<?php endforeach; ?>
+    </ul>
+</div>
+
+
+
+<!-- / JS Files  -->
+
+    <!-- jQuery -->
+    <script src="js/jQuery/jquery-2.1.1.js"></script>
+    
+    <!-- Theme Functions -->
+    <script src="js/functions.js"></script>
+    
+    <!-- Caption Effects Plugin -->
+    <script src="CaptionHoverEffects/js/modernizr.custom.js"></script>
+    <script src="CaptionHoverEffects/js/toucheffects.js"></script>
+    
+<!-- \ JS Files  -->
+
+
+
+</body>
+</html>
